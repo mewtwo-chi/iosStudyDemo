@@ -9,9 +9,6 @@
 #import "BNRDrawViewController.h"
 #import "BNRDrawView.h"
 
-@interface BNRDrawViewController ()
-
-@end
 
 @implementation BNRDrawViewController
 
