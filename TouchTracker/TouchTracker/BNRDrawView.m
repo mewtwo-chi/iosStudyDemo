@@ -44,10 +44,53 @@
         UILongPressGestureRecognizer *pressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
         
         [self addGestureRecognizer:pressRecognizer];
+        
+        self.moveRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveLine:)];
+        
+        self.moveRecognizer.delegate = self;
+        self.moveRecognizer.cancelsTouchesInView = NO;
+        [self addGestureRecognizer:self.moveRecognizer];
 
     }
     
     return self;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+        sholdRecognizeSimultaneousLyWithGrestureRecognizer:(UIGestureRecognizer *)other
+{
+    if(gestureRecognizer == self.moveRecognizer){
+        return YES;
+    }
+    
+    return NO;
+}
+
+-(void)moveLine:(UIPanGestureRecognizer *)gr
+{
+    if(!self.selectedLine) {
+        return;
+    }
+    
+    if(gr.state == UIGestureRecognizerStateChanged) {
+        CGPoint translation = [gr translationInView:self];
+        
+        CGPoint begin = self.selectedLine.begin;
+        CGPoint end = self.selectedLine.end;
+        
+        begin.x += translation.x;
+        begin.y += translation.y;
+        
+        end.x += translation.x;
+        end.y += translation.y;
+        
+        self.selectedLine.begin = begin;
+        self.selectedLine.end = end;
+        
+        [self setNeedsDisplay];
+        
+        [gr setTranslation:CGPointZero inView:self];
+    }
 }
 
 - (void)doubleTap:(UIGestureRecognizer *)gr
