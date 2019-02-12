@@ -2,8 +2,8 @@
 //  BNRImageStore.m
 //  HomePwner
 //
-//  Created by bfe on 2018/8/22.
-//  Copyright © 2018年 Big Nerd Ranch. All rights reserved.
+//  Created by John Gallagher on 1/7/14.
+//  Copyright (c) 2014 Big Nerd Ranch. All rights reserved.
 //
 
 #import "BNRImageStore.h"
@@ -18,50 +18,52 @@
 
 + (instancetype)sharedStore
 {
-    static BNRImageStore *sharedStore = nil;
-    
-    if (!sharedStore){
+    static BNRImageStore *sharedStore;
+
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
         sharedStore = [[self alloc] initPrivate];
-    }
-    
+    });
+
     return sharedStore;
 }
 
-// 不允许直接调用init方法
+// No one should call init
 - (instancetype)init
 {
-    @throw [NSException exceptionWithName:@"Singleton" reason:@"Use+ [BNRImageStore sharedStore]" userInfo:nil];
-    
+    @throw [NSException exceptionWithName:@"Singleton"
+                                   reason:@"Use +[BNRImageStore sharedStore]"
+                                 userInfo:nil];
     return nil;
 }
 
+// Secret designated initializer
 - (instancetype)initPrivate
 {
     self = [super init];
-    
-    if(self) {
+
+    if (self) {
         _dictionary = [[NSMutableDictionary alloc] init];
     }
-    
+
     return self;
 }
 
 - (void)setImage:(UIImage *)image forKey:(NSString *)key
 {
-    [self.dictionary setObject:image forKey:key];
+    self.dictionary[key] = image;
 }
 
 - (UIImage *)imageForKey:(NSString *)key
 {
-    return [self.dictionary objectForKey:key];
+    return self.dictionary[key];
 }
 
 - (void)deleteImageForKey:(NSString *)key
 {
-    if(!key){
+    if (!key) {
         return;
     }
-    
     [self.dictionary removeObjectForKey:key];
 }
 

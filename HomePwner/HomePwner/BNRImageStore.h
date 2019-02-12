@@ -2,8 +2,8 @@
 //  BNRImageStore.h
 //  HomePwner
 //
-//  Created by bfe on 2018/8/22.
-//  Copyright © 2018年 Big Nerd Ranch. All rights reserved.
+//  Created by John Gallagher on 1/7/14.
+//  Copyright (c) 2014 Big Nerd Ranch. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

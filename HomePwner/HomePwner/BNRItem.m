@@ -56,12 +56,12 @@
     // Did the superclass's designated initializer succeed?
     if (self) {
         // Give the instance variables initial values
-        _itemName = name;
-        _serialNumber = sNumber;
-        _valueInDollars = value;
-        _dateCreated = [[NSDate alloc] init];
-        
-        //创建一个NSUUID对象，然后获取其NSString类型的值
+        self.itemName = name;
+        self.serialNumber = sNumber;
+        self.valueInDollars = value;
+        self.dateCreated = [[NSDate alloc] init];
+
+        // Create a NSUUID object - and get its string representation
         NSUUID *uuid = [[NSUUID alloc] init];
         NSString *key = [uuid UUIDString];
         _itemKey = key;

@@ -202,6 +202,12 @@
         [self strokeLine:self.selectedLine];
     }
     
+    float f = 0.0;
+    for (int i = 0; i<1000000; i++) {
+        f = f + sin(sin(sin(time(NULL) + i)));
+    }
+    NSLog(@"f = %f", f);
+    
 }
 
 

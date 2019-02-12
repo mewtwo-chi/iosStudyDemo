@@ -24,7 +24,7 @@
 		520AA4B5187C4FC00048F174 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AA4B4187C4FC00048F174 /* BNRItemStore.m */; };
 		520AA4BF187C87C50048F174 /* BNRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AA4BD187C87C50048F174 /* BNRDetailViewController.m */; };
 		520AA4C0187C87C50048F174 /* BNRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520AA4BE187C87C50048F174 /* BNRDetailViewController.xib */; };
-		B1686987212D4F17001752E0 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B1686986212D4F17001752E0 /* BNRImageStore.m */; };
+		520AA4C3187CAA690048F174 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AA4C2187CAA690048F174 /* BNRImageStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +63,8 @@
 		520AA4BC187C87C50048F174 /* BNRDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRDetailViewController.h; sourceTree = "<group>"; };
 		520AA4BD187C87C50048F174 /* BNRDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRDetailViewController.m; sourceTree = "<group>"; };
 		520AA4BE187C87C50048F174 /* BNRDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRDetailViewController.xib; sourceTree = "<group>"; };
-		B1686985212D4F17001752E0 /* BNRImageStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
-		B1686986212D4F17001752E0 /* BNRImageStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
+		520AA4C1187CAA690048F174 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
+		520AA4C2187CAA690048F174 /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				520AA484187C4EC00048F174 /* HomePwner */,
-				520AA485187C4EC00048F174 /* Supporting Files */,
 				520AA49D187C4EC00048F174 /* HomePwnerTests */,
 				520AA47D187C4EC00048F174 /* Frameworks */,
 				520AA47C187C4EC00048F174 /* Products */,
@@ -131,14 +130,15 @@
 				520AA4B1187C4F910048F174 /* BNRItem.m */,
 				520AA4B3187C4FC00048F174 /* BNRItemStore.h */,
 				520AA4B4187C4FC00048F174 /* BNRItemStore.m */,
+				520AA4C1187CAA690048F174 /* BNRImageStore.h */,
+				520AA4C2187CAA690048F174 /* BNRImageStore.m */,
 				520AA4AD187C4EF00048F174 /* BNRItemsViewController.h */,
 				520AA4AE187C4EF00048F174 /* BNRItemsViewController.m */,
 				520AA4BC187C87C50048F174 /* BNRDetailViewController.h */,
 				520AA4BD187C87C50048F174 /* BNRDetailViewController.m */,
 				520AA4BE187C87C50048F174 /* BNRDetailViewController.xib */,
 				520AA490187C4EC00048F174 /* Images.xcassets */,
-				B1686985212D4F17001752E0 /* BNRImageStore.h */,
-				B1686986212D4F17001752E0 /* BNRImageStore.m */,
+				520AA485187C4EC00048F174 /* Supporting Files */,
 			);
 			path = HomePwner;
 			sourceTree = "<group>";
@@ -152,7 +152,6 @@
 				520AA48C187C4EC00048F174 /* HomePwner-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			path = HomePwner;
 			sourceTree = "<group>";
 		};
 		520AA49D187C4EC00048F174 /* HomePwnerTests */ = {
@@ -272,7 +271,7 @@
 			files = (
 				520AA4BF187C87C50048F174 /* BNRDetailViewController.m in Sources */,
 				520AA4B5187C4FC00048F174 /* BNRItemStore.m in Sources */,
-				B1686987212D4F17001752E0 /* BNRImageStore.m in Sources */,
+				520AA4C3187CAA690048F174 /* BNRImageStore.m in Sources */,
 				520AA4AF187C4EF00048F174 /* BNRItemsViewController.m in Sources */,
 				520AA4B2187C4F910048F174 /* BNRItem.m in Sources */,
 				520AA48B187C4EC00048F174 /* main.m in Sources */,
@@ -398,7 +397,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HomePwner/HomePwner-Prefix.pch";
 				INFOPLIST_FILE = "HomePwner/HomePwner-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -411,7 +412,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HomePwner/HomePwner-Prefix.pch";
 				INFOPLIST_FILE = "HomePwner/HomePwner-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
