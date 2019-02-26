@@ -77,6 +77,13 @@
                      serialNumber:@""];
 }
 
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.itemName forKey:@"itemName"];
+    [aCoder encodeObject:self.serialNumber forKey:@"serialNumber"];
+    [aCoder encodeObject:self.dateCreated forKey:@"dateCreated"];
+}
+
 - (NSString *)description
 {
     NSString *descriptionString =
@@ -92,5 +99,7 @@
 {
     NSLog(@"Destroyed: %@", self);
 }
+
+
 
 @end
