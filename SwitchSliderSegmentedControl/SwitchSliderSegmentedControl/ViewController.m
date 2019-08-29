@@ -51,7 +51,31 @@
     CGFloat scWidth = 220;
     CGFloat scHeight = 29;
     CGFloat scTopView = 186;
+    frame = CGRectMake((screen.size.width - scWidth)/2, scTopView, scWidth, scHeight);
+    segmentControl.frame = frame;
+    [segmentControl addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:segmentControl];
     
+    CGFloat sliderWidth = 300;
+    CGFloat sliderHeight = 31;
+    CGFloat sliderdTopView = 298;
+    UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake((screen.size.width - sliderWidth)/2, sliderdTopView, sliderWidth, sliderHeight)];
+    
+    slider.minimumValue = 0.0f;
+    slider.maximumValue = 100.0f;
+    slider.value = 50.00f;
+    
+    [slider addTarget:self action:@selector(sliderValueChange:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:slider];
+    
+    CGFloat labelSliderValueSliderSpace = 30;
+    UILabel *labelSliderValue = [[UILabel alloc] initWithFrame:CGRectMake(slider.frame.origin.x, slider.frame.origin.y - labelSliderValueSliderSpace, 103, 21)];
+    labelSliderValue.text = @"SliderValue:";
+    [self.view addSubview:labelSliderValue];
+    
+    self.sliderValue = [[UILabel alloc] initWithFrame:CGRectMake(labelSliderValue.frame.origin.x + 120, labelSliderValue.frame.origin.y, 50, 21)];
+    self.sliderValue.text = @"50";
+    [self.view addSubview:self.sliderValue];
 }
 
 - (void)switchValueChanged:(id)sender{
@@ -60,6 +84,28 @@
     [self.leftSwitch setOn:setting animated:TRUE];
     [self.rightSwitch setOn:setting animated:TRUE];
 }
+
+- (void)touchDown:(id)sender {
+    UISegmentedControl *segmentControl = (UISegmentedControl *)sender;
+    NSLog(@"选择的段 ：%li", segmentControl.selectedSegmentIndex);
+    
+    if(self.leftSwitch.hidden){
+        self.rightSwitch.hidden = FALSE;
+        self.leftSwitch.hidden = FALSE;
+    } else {
+        self.rightSwitch.hidden = TRUE;
+        self.leftSwitch.hidden = TRUE;
+    }
+    
+}
+     
+ - (void)sliderValueChange:(id)sender{
+     UISlider *slider = (UISlider *)sender;
+     int progressAsInt = (int)(slider.value);
+     NSString *newText = [[NSString alloc] initWithFormat:@"%d", progressAsInt];
+     NSLog(@"滑块的值：%@", newText);
+     self.sliderValue.text = newText;
+ }
 
 
 @end
