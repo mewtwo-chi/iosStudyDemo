@@ -45,7 +45,14 @@
 {
     self = [super init];
     if (self) {
-        _privateItems = [[NSMutableArray alloc] init];
+//        _privateItems = [[NSMutableArray alloc] init];
+        
+        NSString *path = [self itemArchivePath];
+        _privateItems = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        
+        if (!_privateItems){
+            _privateItems = [[NSMutableArray alloc] init];
+        }
     }
     return self;
 }
@@ -57,7 +64,7 @@
 
 - (BNRItem *)createItem
 {
-    BNRItem *item = [BNRItem randomItem];
+    BNRItem *item = [[BNRItem alloc] init];
 
     [self.privateItems addObject:item];
 
