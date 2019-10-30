@@ -24,6 +24,7 @@
     self.view.backgroundColor = [UIColor blackColor];
     CGRect screen = [[UIScreen mainScreen] bounds];
     
+    // 实例化loading
     self.activityindicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     CGRect frame = self.activityindicatorView.frame;
     frame.origin = CGPointMake((screen.size.width - frame.size.width)/2, 84);
@@ -44,6 +45,7 @@
     CGFloat progressViewWidth = 200;
     CGFloat progressViewHeight = 2;
     CGFloat progressViewTopView = 283;
+    //实例化进度条
     self.progressView = [[UIProgressView alloc] initWithFrame:CGRectMake((screen.size.width - progressViewWidth)/2 , progressViewTopView, progressViewWidth, progressViewHeight)];
     [self.view addSubview: self.progressView];
     
@@ -67,12 +69,15 @@
 }
 
 - (void)downloadProgress:(id)sender{
+    
+    // 在给定的时间间隔调用指定方法 - scheduledTimerWithTimeInterval：时间间隔；target：指定消息发送给的对象；selector：调用的方法；userInfo：给消息发送参数；repeats：是否重复；
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(download) userInfo:nil repeats:TRUE];
 }
 
 - (void)download{
     self.progressView.progress = self.progressView.progress + 0.1;
     if(self.progressView.progress == 1.0){
+        // 完成任务后结束定时器
         [self.timer invalidate];
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"donwload complete!" message:@"" preferredStyle:UIAlertControllerStyleAlert];
