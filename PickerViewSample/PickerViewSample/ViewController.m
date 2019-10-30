@@ -17,6 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    CGRect screen = [[UIScreen mainScreen] bounds];
+    
+    CGFloat pickerViewWidth = 320;
+    CGFloat pickerViewHeight = 162;
+    self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, pickerViewWidth, pickerViewHeight)];
+    
+    [self.view addSubview:self.pickerView];
 }
 
 

@@ -14,6 +14,7 @@
 		B1B4B3D92369B79E006A0BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1B4B3D82369B79E006A0BD9 /* Assets.xcassets */; };
 		B1B4B3DC2369B79E006A0BD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1B4B3DA2369B79E006A0BD9 /* LaunchScreen.storyboard */; };
 		B1B4B3DF2369B79E006A0BD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1B4B3DE2369B79E006A0BD9 /* main.m */; };
+		B1B4B3E62369B9FB006A0BD9 /* provinces_cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1B4B3E52369B9FB006A0BD9 /* provinces_cities.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		B1B4B3DB2369B79E006A0BD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1B4B3DD2369B79E006A0BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1B4B3DE2369B79E006A0BD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B1B4B3E52369B9FB006A0BD9 /* provinces_cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = provinces_cities.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				B1B4B3CD2369B79C006A0BD9 /* AppDelegate.m */,
 				B1B4B3CF2369B79C006A0BD9 /* SceneDelegate.h */,
 				B1B4B3D02369B79C006A0BD9 /* SceneDelegate.m */,
+				B1B4B3E52369B9FB006A0BD9 /* provinces_cities.plist */,
 				B1B4B3D22369B79C006A0BD9 /* ViewController.h */,
 				B1B4B3D32369B79C006A0BD9 /* ViewController.m */,
 				B1B4B3D52369B79C006A0BD9 /* Main.storyboard */,
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1B4B3DC2369B79E006A0BD9 /* LaunchScreen.storyboard in Resources */,
+				B1B4B3E62369B9FB006A0BD9 /* provinces_cities.plist in Resources */,
 				B1B4B3D92369B79E006A0BD9 /* Assets.xcassets in Resources */,
 				B1B4B3D72369B79C006A0BD9 /* Main.storyboard in Resources */,
 			);
