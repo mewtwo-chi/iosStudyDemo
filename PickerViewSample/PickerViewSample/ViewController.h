@@ -10,12 +10,6 @@
 
 @interface ViewController : UIViewController
 
-@property (strong, nonatomic) UIPickerView *pickerView;
-@property (strong, nonatomic) UILabel *label;
-
-@property (strong, nonatomic) NSDictionary *pickData; //保存全部数据
-@property (strong, nonatomic) NSArray *pickerProvincesData; //当前的省数据
-@property (strong, nonatomic) NSArray *pickerCitiesData; //当前省下面的市数据
 
 @end
 
