@@ -14,7 +14,7 @@
 @property (strong, nonatomic) UILabel *label;
 
 @property (strong, nonatomic) NSDictionary *pickerData; //保存全部数据
-@property (strong, nonatomic) NSArray *pickerProvincesData; //当前的省数据
+@property (strong, nonatomic) NSArray*pickerProvincesData; //当前的省数据
 @property (strong, nonatomic) NSArray *pickerCitiesData; //当前省下面的市数据
 
 @end
@@ -24,6 +24,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    // 字面量语法创建一个不可变数组
+    NSArray *arr = @[@"A", @"B", @"C", @"D"];
+    NSLog(@"%@", arr);
+
+
+    // 数组转换字符串
+    NSString *str = [arr componentsJoinedByString:@","];
+    NSLog(@"%@", str);
+
+    // 字符串转数组
+    NSArray *array = [str componentsSeparatedByString:@","];
+    NSLog(@"%@", array);
     
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *plistPath = [bundle pathForResource:@"provinces_cities" ofType:@"plist"];
@@ -35,6 +49,8 @@
     
     //省份名数据
     self.pickerProvincesData = [self.pickerData allKeys];
+    
+    NSLog(@"pickerProvincesData:%@",[self.pickerProvincesData componentsJoinedByString:@","]);
     
     // 默认取出第一个省的所有市的数据
     NSString *seletedProvince = [self.pickerProvincesData objectAtIndex:0];
